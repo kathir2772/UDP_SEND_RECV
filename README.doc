@@ -1,0 +1,60 @@
+READ ME:
+--------
+
+This module does both binary and text file multicasting, from one server to many clients over UDP Socket.
+	
+
+prerequisite:
+------------
+1) Good C Skills.
+2) Networking Skills with Socket programming UDP.
+
+
+Sytems Required (For Testing):
+----------------
+1)3 PC's with Linux Terminal
+	>> One for Server Process
+	>> Two for Client Process 
+
+Description:
+-----------
+	
+	>> Client needs to execute the given a.out (QUESTION) file in the LINUX Terminal.
+	
+	>> Once all the Clients executed  a.out file , server will start multicasting the QUESTION PAPER to all clients. 
+
+	>> QUESTION PAPER is displayed on the Client's Terminal.
+	
+	>> Once the Client Stops Reading and closes that file, server will automatically removes the text file.
+	
+
+
+Client Process:
+---------------
+1)Find executable file named as QUESTION and execute with  cmd
+	$./QUESTION
+		>>It will wait for server connection
+
+2)Once the connection is done with server , QUESTION PAPER is displayed on the Client Terminal
+	*Note - it will not store the QUESTION PAPER in the Client's directory
+
+	
+Server Process:
+---------------
+
+1)Find source code of Server process named as udpsend.c and execute with make cmd
+        $make   
+                >>It will create a executable file as send
+
+2)Execute with proper command line arguements
+        $./send  TestPaper.pdf
+
+        $<exe file> <FILE_NAME>
+
+3)Once the server accepts requested connection from all Clients , then server will multicast the QUESTION PAPER to all Clients.
+
+4)Once the TEST Completed , the question paper displayed on the client's terminal is automatically removed by the server
+
+
+
+
